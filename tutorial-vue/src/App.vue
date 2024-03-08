@@ -69,7 +69,6 @@
           });
           const personaCreada = await response.json();
           personas.value = [...personas.value, personaCreada];
-          console.log("he agregado persona");
           store.increment();
         } catch (error) {
           console.error(error);
