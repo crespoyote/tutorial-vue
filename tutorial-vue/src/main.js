@@ -1,8 +1,13 @@
 import { createApp } from 'vue'
+import { createPinia } from 'pinia'
 import App from './App.vue'
 
 import './assets/main.css'
 
+const myapp = createApp(App)
+const pinia = createPinia()
+
+myapp.use(pinia)
 createApp(App).mount('#app')
 
 // Importa el archivo JavaScript de Bootstrap desde node_modules
