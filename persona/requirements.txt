@@ -15,3 +15,4 @@ sqlparse==0.4.4
 typing_extensions==4.9.0
 whitenoise==6.6.0
 djangorestframework==3.12.4
+corsheaders==3.10.1
