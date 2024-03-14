@@ -70,6 +70,7 @@
           const personaCreada = await response.json();
           personas.value = [...personas.value, personaCreada];
           store.increment();
+          console.log(myVar);
         } catch (error) {
           console.error(error);
         }
