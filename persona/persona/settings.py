@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
+import dj_database_url
+import os
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -93,6 +96,15 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+NEON_URL='postgresql://neondb_owner:ylo5bIvkK9aF@ep-rough-water-a5987a5c.us-east-2.aws.neon.tech/neondb?sslmode=require'
+
+# To see the current value just type echo $TESTING
+if 'TESTING' not in os.environ:
+    db_from_env = dj_database_url.config(default=NEON_URL,
+    conn_max_age=500)
+    DATABASES['default'].update(db_from_env)
+    print("usando base de neon")
 
 
 # Password validation
