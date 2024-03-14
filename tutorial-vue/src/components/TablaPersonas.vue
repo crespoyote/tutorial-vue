@@ -84,11 +84,12 @@
                 &#x1F58A; Editar
               </button>
               <button
-                class="btn btn-danger ml-2"
+                class="btn btn-danger"
+                data-cy="delete-button"
                 @click="$emit('delete-persona', persona.id)"
               >
                 &#x1F5D1; Eliminar
-              </button>
+              </button>              
             </td>
           </tr>
         </tbody>
@@ -161,13 +162,3 @@ export default {
 <style scoped>
   /* Estilos específicos del componente con el modificador "scoped" */
 </style>
-
-<!-- TablaPersonas.vue -->
-const guardarPersona = (persona) => {
-    if (!persona.nombre.length || !persona.apellido.length || !persona.email.
-    ,→ length) {
-    return;
-    }
-    ctx.emit('actualizar-persona', persona.id, persona);
-    editando.value = null;
-};
