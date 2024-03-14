@@ -31,7 +31,7 @@ CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:5173',
     'http://127.0.0.1:5173',
-    'https://api-uqdd.onrender.com/',
+    'https://p2-semana2-vue.onrender.com',
 ]
 
 
