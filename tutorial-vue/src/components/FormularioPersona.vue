@@ -126,6 +126,11 @@
                     return;
                 }
 
+                // Verificar si el correo electrónico es válido
+                if (!validarEmail(persona.value.email)) {
+                    return;
+                }
+
                 ctx.emit('add-persona', persona.value);
                 nombre.value.focus();
 
@@ -139,6 +144,12 @@
                 correcto.value = true;
                 procesando.value = false;
 
+            };
+
+            const validarEmail = (email) => {
+              // Expresión regular para validar el formato del correo electrónico
+              const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              return regex.test(email);
             };
                 
             const resetEstado = () => {
